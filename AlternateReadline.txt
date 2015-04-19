@@ -1,0 +1,21 @@
+            Console.WriteLine("Student First Name");
+            student.firstName = Console.ReadLine();
+            Console.WriteLine("Student Last Name");
+            student.lastName = Console.ReadLine();
+            Console.WriteLine("Student Birthdate");
+            student.birthdate = DateTime.Parse( Console.ReadLine());
+            Console.WriteLine("Student Address Line 1");
+            student.addressLine1 = Console.ReadLine();
+            Console.WriteLine("Student Address Line 2");
+            student.addressLine2 = Console.ReadLine();
+            Console.WriteLine("Student City");
+            student.city = Console.ReadLine();
+            Console.WriteLine("Student State/Province");
+            student.StateProvince = Console.ReadLine();
+            Console.WriteLine("Student Zip/Postal");
+            student.zipPostal = Int32.Parse( Console.ReadLine()) ;
+            Console.WriteLine("Student Country");
+            student.Country = Console.ReadLine();
+            Console.WriteLine("Student GPA");
+            student.gpa = float.Parse( Console.ReadLine());
+

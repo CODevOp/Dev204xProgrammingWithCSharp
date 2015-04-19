@@ -1,0 +1,6 @@
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\bin\Debug\DataTypeConsole.exe.config
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\bin\Debug\DataTypeConsole.exe
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\bin\Debug\DataTypeConsole.pdb
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\obj\Debug\DataTypeConsole.csprojResolveAssemblyReference.cache
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\obj\Debug\DataTypeConsole.exe
+C:\Users\bret\Google Drive\Development\C# Course\Projects\DataTypeConsole\DataTypeConsole\obj\Debug\DataTypeConsole.pdb
