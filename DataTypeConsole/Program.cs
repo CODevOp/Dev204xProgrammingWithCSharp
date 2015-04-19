@@ -55,8 +55,31 @@ namespace DataTypeConsole
             //instantiate and populate array
             professorCoursesTaught = new string[] { "CIS 1010", "CIS 1080" };
 
-            universityName = "My School U";
-            universityProgram = "Computer Information Systems";
+            universityName = "Colorado State University";
+            universityProgram = "CIS Graduate Program";
+
+            // reference http://biz.colostate.edu/cisMaster/curriculum/Pages/courses.aspx
+            // program Core Courses
+            //CIS600 - IT and Project Management
+            //CIS601 - Enterprise Computing & Systems Integration
+            //CIS605 - Business Visual Application Development
+            //CIS606 - Application Software Infrastructure
+            //CIS610 - Software Development Methodology
+            //CIS611 - Object-Oriented Systems
+            //CIS620 - IT Communication Infrastructure
+            //CIS655 - Business Database Systems
+            //CIS665 - E-Business Application Technology
+
+            //Elective Courses
+            //BUS690C - Agile Project Management with Scrum
+            //BUS690C - Information Technology Management
+            //BUS690C - Data Visualization and Manipulation
+            //BUS690C - Advanced Networking and Security
+            //CIS570 - Business Intelligence
+            //CIS575 - Applied Data Mining and Analytics in Business
+            //CIS670 - Advanced Project Management and Preparation for the PMP Exam
+            //CIS680A1 - Data, Systems and Network Security
+            //CIS695 - Professional Project or Paper
 
             //student outputs
             Console.WriteLine("Student");
