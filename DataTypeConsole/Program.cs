@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DataTypeConsole
@@ -23,8 +24,13 @@ namespace DataTypeConsole
 
             GetUniversityData();
 
-            //ValidateStudenBirthday(new DateTime());
-            
+            try { 
+                ValidateStudenBirthday(new DateTime());
+            }
+            catch(NotImplementedException nie)
+            {
+                Console.WriteLine("\n {0}", nie.Message);
+            }
             /// wait for response before exiting
             Console.ReadLine();
         }
@@ -34,7 +40,7 @@ namespace DataTypeConsole
             //Student data
             string studentFirstName;
             string studentLastName;
-            DateTime studentBirthdate;
+            DateTime? studentBirthdate = null;
             string studentAddressLine1;
             string studentAddressLine2;
             string studentCity;
@@ -44,9 +50,23 @@ namespace DataTypeConsole
             double studentGpa;
             string studentEmail;
 
-            studentFirstName = "Bob";
-            studentLastName = "Miller";
-            studentBirthdate = new DateTime(1995, 11, 17);
+            Console.WriteLine("Enter Student First Name.");
+            studentFirstName = Console.ReadLine(); // Bob
+            Console.WriteLine("Enter Student Last Name.");
+            studentLastName = Console.ReadLine(); // "Miller"
+            while(!studentBirthdate.HasValue)
+            {                
+                try // wrap the set studenBirthdate in a try catch until a datetime is a proper date.
+                {
+                    Console.WriteLine("Enter Student Birthdate (MM/DD/YYYY).");
+                    studentBirthdate = DateTime.Parse(Console.ReadLine()); // new DateTime(1995, 11, 17);
+                }
+                catch//(InvalidCastException invalidCast)
+                {
+                    Console.WriteLine("An invalid value was entered, please try again.");
+                }
+            }
+            
             studentAddressLine1 = "1234 1st Street";
             studentAddressLine2 = "A";
             studentCity = "City Ville";
@@ -62,12 +82,31 @@ namespace DataTypeConsole
             //professor data
             string professorFirstName;
             string professorLastName;
-            string professorEmail;
+            string professorEmail = "";
+            
+            //use regular expression to confirm email is in the correct format
+            //[\w] a set of word characters, + 1 or more {2,3} between 2 and 3 characters
+            //regular expression references http://download.microsoft.com/download/D/2/4/D240EBF6-A9BA-4E4F-A63F-AEB6DA0B921C/Regular%20expressions%20quick%20reference.docx
+            //https://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regex%28v=vs.110%29.aspx
+            string emailPattern = @"[\w]+@[\w.]+.[\w]{2,3}";
+            
             //Use an array as another way to structure the data
             string[] professorCoursesTaught;
-            professorFirstName = "William";
-            professorLastName = "Henderson";
-            professorEmail = "WHenderson@mySchool.edu";
+            Console.WriteLine("Enter Professor First Name.");
+            professorFirstName = Console.ReadLine(); // "William";
+
+            Console.WriteLine("Enter Professor LastName Name.");
+            professorLastName = Console.ReadLine(); // "Henderson";
+            while(!Regex.IsMatch(professorEmail, emailPattern)){
+                Console.WriteLine("Enter Professor Email (name@domain.com).");
+                professorEmail = Console.ReadLine(); // "WHenderson@mySchool.edu";
+                if (Regex.IsMatch(professorEmail, emailPattern)) 
+                {
+                    Console.WriteLine("An invalid value was entered, please try again.");
+                }
+
+            }
+            
             //instantiate and populate array
             professorCoursesTaught = new string[] { "CIS 1010", "CIS 1080" };
 
@@ -111,14 +150,14 @@ namespace DataTypeConsole
             PrintUniversityData(universityName, universityProgram, programCoreCourses, programElectiveCourses);
         }
 
-        private static void PrintStudentData(string studentFirstName, string studentLastName, DateTime studentBirthdate, string studentAddressLine1, string studentAddressLine2, string studentCity, string studentStateProvince, int studentZipPostal, string studentCountry, double studentGpa, string studentEmail)
+        private static void PrintStudentData(string studentFirstName, string studentLastName, DateTime? studentBirthdate, string studentAddressLine1, string studentAddressLine2, string studentCity, string studentStateProvince, int studentZipPostal, string studentCountry, double studentGpa, string studentEmail)
         {
 
             //student outputs
             Console.WriteLine("Student");
             Console.WriteLine("\tName: {0} {1}", studentFirstName, studentLastName);
             Console.WriteLine("\tGPA: {0}", studentGpa);
-            Console.WriteLine("\tDOB: {0}", studentBirthdate.ToShortDateString());
+            Console.WriteLine("\tDOB: {0}", ((DateTime)studentBirthdate).ToShortDateString());
             Console.WriteLine("\tEmail: {0}", studentEmail);
             Console.WriteLine("\t{0}", studentAddressLine1);
             Console.WriteLine("\t{0}", studentAddressLine2);
