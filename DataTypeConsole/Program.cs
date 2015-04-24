@@ -19,13 +19,8 @@ namespace DataTypeConsole
             GetUniversityData();
 
             //valide Student Birthday
-            try { 
-                ValidateStudentBirthday(new DateTime());
-            }
-            catch(NotImplementedException nie)
-            {
-                Console.WriteLine("\n {0}", nie.Message);
-            }
+            ValidateStudentBirthday(new DateTime());
+            
             /// wait for response before exiting
             Console.ReadLine();
         }
