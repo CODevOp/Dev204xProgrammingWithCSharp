@@ -1,31 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DataTypeConsole
 {
     class Program
     {
-
-
-
-
-
-
+        
         static void Main(string[] args)
         {
-
+            //collect data for Student and print to screen
             GetStudentData();
 
+            //collect data for Professor and print to screen
             GetProfessorData();
 
+            //collect data for University and Program and print to screen
             GetUniversityData();
 
+            //valide Student Birthday
             try { 
-                ValidateStudenBirthday(new DateTime());
+                ValidateStudentBirthday(new DateTime());
             }
             catch(NotImplementedException nie)
             {
@@ -34,7 +29,9 @@ namespace DataTypeConsole
             /// wait for response before exiting
             Console.ReadLine();
         }
-
+       /// <summary>
+       /// collect data for Student and print to screen
+       /// </summary>
         private static void GetStudentData()
         {
             //Student data
@@ -54,6 +51,8 @@ namespace DataTypeConsole
             studentFirstName = Console.ReadLine(); // Bob
             Console.WriteLine("Enter Student Last Name.");
             studentLastName = Console.ReadLine(); // "Miller"
+            
+            //loop until the user enters a valid date format
             while(!studentBirthdate.HasValue)
             {                
                 try // wrap the set studenBirthdate in a try catch until a datetime is a proper date.
@@ -77,6 +76,9 @@ namespace DataTypeConsole
             studentEmail = "Bob.Miller@g.com";
             PrintStudentData(studentFirstName, studentLastName, studentBirthdate, studentAddressLine1, studentAddressLine2, studentCity, studentStateProvince, studentZipPostal, studentCountry, studentGpa, studentEmail);
         }
+        /// <summary>
+        /// collect data for Professor data and print to screen
+        /// </summary>
         private static void GetProfessorData()
         {
             //professor data
@@ -97,6 +99,8 @@ namespace DataTypeConsole
 
             Console.WriteLine("Enter Professor LastName Name.");
             professorLastName = Console.ReadLine(); // "Henderson";
+
+            //loop until user enters a valid email address
             while(!Regex.IsMatch(professorEmail, emailPattern)){
                 Console.WriteLine("Enter Professor Email (name@domain.com).");
                 professorEmail = Console.ReadLine(); // "WHenderson@mySchool.edu";
@@ -112,6 +116,9 @@ namespace DataTypeConsole
 
             PrintProfessorData(professorFirstName, professorLastName, professorEmail, professorCoursesTaught);
         }
+        /// <summary>
+        /// Collect and print University and Program Data
+        /// </summary>
         private static void GetUniversityData()
         {
             //School data
@@ -149,7 +156,20 @@ namespace DataTypeConsole
             
             PrintUniversityData(universityName, universityProgram, programCoreCourses, programElectiveCourses);
         }
-
+        /// <summary>
+        /// Print Student data
+        /// </summary>
+        /// <param name="studentFirstName"></param>
+        /// <param name="studentLastName"></param>
+        /// <param name="studentBirthdate"></param>
+        /// <param name="studentAddressLine1"></param>
+        /// <param name="studentAddressLine2"></param>
+        /// <param name="studentCity"></param>
+        /// <param name="studentStateProvince"></param>
+        /// <param name="studentZipPostal"></param>
+        /// <param name="studentCountry"></param>
+        /// <param name="studentGpa"></param>
+        /// <param name="studentEmail"></param>
         private static void PrintStudentData(string studentFirstName, string studentLastName, DateTime? studentBirthdate, string studentAddressLine1, string studentAddressLine2, string studentCity, string studentStateProvince, int studentZipPostal, string studentCountry, double studentGpa, string studentEmail)
         {
 
@@ -164,6 +184,13 @@ namespace DataTypeConsole
             Console.WriteLine("\t{0}, {1} {2}", studentCity, studentStateProvince, studentZipPostal);
             Console.WriteLine("\t{0}", studentCountry);
         }
+        /// <summary>
+        /// Print Professor Data
+        /// </summary>
+        /// <param name="professorFirstName"></param>
+        /// <param name="professorLastName"></param>
+        /// <param name="professorEmail"></param>
+        /// <param name="professorCoursesTaught"></param>
         private static void PrintProfessorData(string professorFirstName, string professorLastName, string professorEmail, string[] professorCoursesTaught)
         {
             //profesor outputs
@@ -173,6 +200,13 @@ namespace DataTypeConsole
             Console.WriteLine("\tCourses Taught:");
             PrintSubItems(professorCoursesTaught);
         }
+        /// <summary>
+        /// Print Unviersity and Program Data
+        /// </summary>
+        /// <param name="universityName"></param>
+        /// <param name="universityProgram"></param>
+        /// <param name="programCoreCourses"></param>
+        /// <param name="programElectiveCourses"></param>
         private static void PrintUniversityData(string universityName, string universityProgram, string[] programCoreCourses, string[] programElectiveCourses)
         {
             // School outputs
@@ -185,6 +219,10 @@ namespace DataTypeConsole
             PrintSubItems(programElectiveCourses);
 
         }
+        /// <summary>
+        /// Print an array of items.
+        /// </summary>
+        /// <param name="arrayOfSubItems"></param>
         private static void PrintSubItems(string[] arrayOfSubItems)
         {
             // loop through each item in the array printing on seperate lines.
@@ -193,7 +231,12 @@ namespace DataTypeConsole
                 Console.WriteLine("\t** {0}", subItem);
             }
         }
-        private static Boolean ValidateStudenBirthday(DateTime studentDateOfBirth)
+        /// <summary>
+        /// Confirm the Students DOB is valid
+        /// </summary>
+        /// <param name="studentDateOfBirth"></param>
+        /// <returns></returns>
+        private static Boolean ValidateStudentBirthday(DateTime studentDateOfBirth)
         {
             throw new NotImplementedException("The ValidateStudenBirthday Method has not been implemented.");
         }
