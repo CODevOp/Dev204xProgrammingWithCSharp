@@ -195,6 +195,34 @@ namespace Module5
        
     }
     /// <summary>
+    /// This is from Degree.cs
+    /// </summary>
+    public class Degree
+    {
+        #region Constructors
+        public Degree(string degreeName)
+        {
+            this.DegreeName = degreeName;
+        }
+        #endregion
+        #region fields
+        string _degreeName;
+        private Course _course;
+        #endregion
+        #region Properties
+        public string DegreeName
+        {
+            get { return _degreeName; }
+            set { _degreeName = value; }
+        }
+        public Course Course
+        {
+            get { return _course; }
+            set { _course = value; }
+        }
+        #endregion
+    }
+    /// <summary>
     /// This is from Course.cs
     /// </summary>
     public class Course
@@ -210,9 +238,7 @@ namespace Module5
         #region Fields
         private string _courseName;
         private Teacher[] _teacher;
-        private Student[] _students;
-        private UProgram _program;
-        
+        private Student[] _students;       
         #endregion
         #region Properties
         public string CourseName
@@ -231,40 +257,7 @@ namespace Module5
             get { return _students; }
             set { _students = value; }
         }
-        public UProgram Program
-        {
-            get { return _program; }
-            set { _program = value; }
-        }
         #endregion
     }
-    /// <summary>
-    /// This is from Degree.cs
-    /// </summary>
-    public class Degree
-    {
-        #region Constructors
-        public Degree(string degreeName)
-        {
-            this.DegreeName = degreeName;
-        }
-        #endregion
-        #region fields
-        string _degreeName;
-               
-        private Course course;
-        #endregion
-        #region Properties
-        public string DegreeName
-        {
-            get { return _degreeName; }
-            set { _degreeName = value; }
-        }
-        public Course Course
-        {
-            get { return course; }
-            set { course = value; }
-        }
-        #endregion
-    }
+    
 }
