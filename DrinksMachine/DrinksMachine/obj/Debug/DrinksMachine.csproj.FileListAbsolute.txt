@@ -1,0 +1,6 @@
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\bin\Debug\DrinksMachine.exe.config
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\bin\Debug\DrinksMachine.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\bin\Debug\DrinksMachine.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\obj\Debug\DrinksMachine.csprojResolveAssemblyReference.cache
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\obj\Debug\DrinksMachine.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\DrinksMachine\DrinksMachine\obj\Debug\DrinksMachine.pdb
