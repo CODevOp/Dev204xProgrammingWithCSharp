@@ -8,19 +8,19 @@ namespace Module5
         {
             //Instantiate three Student objects.
             Student[] students = new Student[3];
-            students[0] = new Student("George", "Harrison", new DateTime(1985,05,05), "George.Harrison@edx.edu", 3.0 );
-            students[1] = new Student("Henry", "Lade", new DateTime(1986,06,023), "Henry.Lade@edx.edu", 3.3 );
-            students[2] = new Student("Lisa", "Stackton", new DateTime(1983,10,05), "Lisa.Stackton@edx.edu", 3.9 );
-            
+            students[0] = new Student("George", "Harrison", new DateTime(1985, 05, 05), "George.Harrison@edx.edu", 3.0);
+            students[1] = new Student("Henry", "Lade", new DateTime(1986, 06, 023), "Henry.Lade@edx.edu", 3.3);
+            students[2] = new Student("Lisa", "Stackton", new DateTime(1983, 10, 05), "Lisa.Stackton@edx.edu", 3.9);
+
             //Instantiate a Course object called Programming with C#.
             Course course = new Course("Programming with C#");
-            
+
             //Add your three students to this Course object.
             course.Students = students;
 
             //Instantiate at least one Teacher object.            
-            Teacher teacher = new Teacher("Eric", "Jordan", "Eric.Jordan@dedx.edu", new string[]{"Programming with C#"});
-            
+            Teacher teacher = new Teacher("Eric", "Jordan", "Eric.Jordan@dedx.edu", new string[] { "Programming with C#" });
+
             //Add that Teacher object to your Course object
             course.Teachers[0] = teacher;
 
@@ -31,11 +31,11 @@ namespace Module5
             degree.Course = course;
 
             //Instantiate a UProgram object called Information Technology.
-            UProgram uprogram  = new UProgram("Computer Science");
+            UProgram uprogram = new UProgram("Computer Science");
 
             //Add the Degree object to the UProgram object.
             uprogram.Degree = degree;
-                        
+
             //The name of the program and the degree it contains
             Console.WriteLine("The {0} program contains the {1} degree\n", uprogram.ProgramName, uprogram.Degree.DegreeName);
             //The name of the course in the degree
@@ -100,7 +100,7 @@ namespace Module5
             _studentCount++;
 
         }
-       
+
         #endregion
 
     }
@@ -151,7 +151,7 @@ namespace Module5
         }
 
         #endregion
-              
+
     }
     /// <summary>
     /// this is the from the Upgrogram.cs
@@ -167,7 +167,7 @@ namespace Module5
         #region Fields
         private string _universityName;
         private string _programName;
-        private Degree degree;        
+        private Degree degree;
         #endregion
         #region Properties
         public string ProgramName
@@ -190,9 +190,9 @@ namespace Module5
             set { degree = value; }
         }
 
-        
+
         #endregion
-       
+
     }
     /// <summary>
     /// This is from Degree.cs
@@ -238,7 +238,7 @@ namespace Module5
         #region Fields
         private string _courseName;
         private Teacher[] _teacher;
-        private Student[] _students;       
+        private Student[] _students;
         #endregion
         #region Properties
         public string CourseName
@@ -259,5 +259,301 @@ namespace Module5
         }
         #endregion
     }
-    
+
 }
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class Course
+//    {
+//        private string _name;
+
+//        public string Name
+//        {
+//            get { return _name; }
+//            set { _name = value; }
+//        }
+
+//        private uint _studentIndex;
+
+//        public uint StudentIndex
+//        {
+//            get { return _studentIndex; }
+//            set { _studentIndex = value; }
+//        }
+
+//        private Student[] _studentArray = new Student[3];
+
+//        internal Student[] StudentArray
+//        {
+//            get { return _studentArray; }
+//            set { _studentArray = value; }
+//        }
+
+//        private uint _teacherIndex;
+
+//        private Teacher[] _teacherArray = new Teacher[3];
+
+//        internal Teacher[] TeacherArray
+//        {
+//            get { return _teacherArray; }
+//            set { _teacherArray = value; }
+//        }
+
+//        public uint TeacherIndex
+//        {
+//            get { return _teacherIndex; }
+//            set { _teacherIndex = value; }
+//        }
+
+//        public Course(string nm)
+//        {
+//            this.Name = nm;
+//            this.StudentIndex = 0;
+//            this.TeacherIndex = 0;
+//        }
+
+//        public void AddStudent(Student s)
+//        {
+//            this.StudentArray[StudentIndex] = s;
+//            this.StudentIndex++;
+//        }
+
+//        public void AddTeacher(Teacher t)
+//        {
+//            this.TeacherArray[this.TeacherIndex] = t;
+//            this.TeacherIndex++;
+//        }
+//    }
+//}
+
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class Degree
+//    {
+//        private string _name;
+
+//        public string Name
+//        {
+//            get { return _name; }
+//            set { _name = value; }
+//        }
+
+//        private Course _course;
+
+//        public Course Course
+//        {
+//            get { return _course; }
+//            set { _course = value; }
+//        }
+
+//        public Degree(string n)
+//        {
+//            this.Name = n;
+//        }
+
+//        public void AddCourse(Course c)
+//        {
+//            this.Course = c;
+//        }
+//    }
+//}
+
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class Program
+//    {
+//        static void doWork()
+//        {
+//            /* 1. Instantiate three Student objects. */
+//            Student studentOne = new Student("Seymour", "Butts");
+//            Student studentTwo = new Student("Marcus", "Absent");
+//            Student studentThree = new Student("Ivana", "Tinkle");
+
+//            /* 2. Instantiate a Course object called "Programming with C#". */
+//            Course course = new Course("Programming with C#");
+
+//            /* 3. Add your three students to this Course object. */
+//            course.AddStudent(studentOne);
+//            course.AddStudent(studentTwo);
+//            course.AddStudent(studentThree);
+
+//            /* 4. Instantiate at least one Teacher object. */
+//            Teacher teacherOne = new Teacher("Anne", "Teake");
+
+//            /* 5. Add that Teacher object to your Course object. */
+//            course.AddTeacher(teacherOne);
+
+//            /* 6. Instantiate a Degree object, such as Bachelor. */
+//            Degree bachelors = new Degree("Bachelors of Science");
+
+//            /* 7. Add your Course object to the Degree object. */
+//            bachelors.AddCourse(course);
+
+//            /* 8. Instantiate a UProgram object called Information Technology. */
+//            UProgram InformationTechnology = new UProgram("Information Technology");
+
+//            /* 9. Add the Degree object to the UProgram object. */
+//            InformationTechnology.AddDegree(bachelors);
+
+//            /* 10. Using Console.WriteLine statements, output the following information to the console window: */
+//            /* The name of the program and the degree it contains. */
+//            Console.WriteLine("The {0} program contains the {1} degree.", InformationTechnology.Name, bachelors.Name);
+//            /* The name of the course in the degree. */
+//            Console.WriteLine("\nThe {0} degree contains the course {1}.", bachelors.Name, course.Name);
+//            /* The count of the number of students in the course. */
+//            Console.WriteLine("\nThe {0} course has {1} students in it.", course.Name, Student.NumOfStudents);
+//            Console.WriteLine("\nPress any key to continue...");
+//            Console.ReadKey();
+//        }
+//        static void Main(string[] args)
+//        {
+//            try
+//            {
+//                doWork();
+//            }
+//            catch (NotImplementedException nyiEx)
+//            {
+//                Console.WriteLine(nyiEx.Message);
+//            }
+//            catch (Exception ex)
+//            {
+//                Console.WriteLine(ex.Message);
+//            }
+//        }
+//    }
+//}
+
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class Student
+//    {
+//        private static uint _numOfStudents = 0;
+
+//        public static uint NumOfStudents
+//        {
+//            get { return Student._numOfStudents; }
+//            set { Student._numOfStudents = value; }
+//        }
+
+//        private string _firstName;
+
+//        public string FirstName
+//        {
+//            get { return _firstName; }
+//            set { _firstName = value; }
+//        }
+
+//        private string _lastName;
+
+//        public string LastName
+//        {
+//            get { return _lastName; }
+//            set { _lastName = value; }
+//        }
+
+//        public Student(string fn, string ln)
+//        {
+//            this.FirstName = fn;
+//            this.LastName = ln;
+//            Student.NumOfStudents++;
+//        }
+//    }
+//}
+
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class Teacher
+//    {
+//        private string _firstName;
+
+//        public string FirstName
+//        {
+//            get { return _firstName; }
+//            set { _firstName = value; }
+//        }
+
+//        private string _lastName;
+
+//        public string LastName
+//        {
+//            get { return _lastName; }
+//            set { _lastName = value; }
+//        }
+
+//        public Teacher(string fn, string ln)
+//        {
+//            this.FirstName = fn;
+//            this.LastName = ln;
+//        }
+//    }
+//}
+
+////using System;
+////using System.Collections.Generic;
+////using System.Linq;
+////using System.Text;
+////using System.Threading.Tasks;
+
+//namespace Module_Five_Assignment
+//{
+//    class UProgram
+//    {
+//        private string _name;
+
+//        public string Name
+//        {
+//            get { return _name; }
+//            set { _name = value; }
+//        }
+
+//        public UProgram(string n)
+//        {
+//            this.Name = n;
+//        }
+
+//        private Degree _degree;
+
+//        internal Degree Degree
+//        {
+//            get { return _degree; }
+//            set { _degree = value; }
+//        }
+
+//        public void AddDegree(Degree d)
+//        {
+//            this.Degree = d;
+//        }
+//    }
+//}
+
