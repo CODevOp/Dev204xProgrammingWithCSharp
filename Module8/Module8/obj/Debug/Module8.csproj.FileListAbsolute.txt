@@ -1,0 +1,6 @@
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\bin\Debug\Module8.exe.config
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\bin\Debug\Module8.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\bin\Debug\Module8.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\obj\Debug\Module8.csprojResolveAssemblyReference.cache
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\obj\Debug\Module8.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module8\Module8\obj\Debug\Module8.pdb
