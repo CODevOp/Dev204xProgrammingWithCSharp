@@ -21,10 +21,10 @@ namespace RestrictionOperators
 
             //samples.Linq2(); // This sample uses the where clause to find all products that are out of stock
 
-            samples.Linq3(); // This sample uses the where clause to find all products that are in  stock and cost 
+            //samples.Linq3(); // This sample uses the where clause to find all products that are in  stock and cost 
                                // more than 3.00 per unit
 
-            //samples.Linq4(); // This sample uses the where  clause to find all customers in Washington and then it 
+            samples.Linq4(); // This sample uses the where  clause to find all customers in Washington and then it 
                                // uses a foreach loop to iterate over the orders collection that belongs to each 
                                // customer
 
@@ -107,11 +107,33 @@ namespace RestrictionOperators
             {
                 List<Product> products = GetProductList();
 
-                //Create code to implement the functionality listed in the [Description] tag for this query
-                var expensiveInStockProducts = 
-                    from prod in products
-                    where prod.UnitPrice > 3.00M && prod.UnitsInStock > 0
-                    select prod;
+                //Query Linq3
+                //var expensiveInStockProducts = 
+                //    from prod in products
+                //    where prod.UnitPrice > 3.00M && prod.UnitsInStock > 0
+                //    select prod;
+                // from Linq3()
+                
+                //student 1
+                //var expensiveInStockProducts =
+                //from prod in products
+                //where prod.UnitsInStock > 0
+                //where prod.UnitPrice > 3.00m
+                //select prod;
+
+                //student 2
+                //RestrictionOperators project
+                //Linq code for expensiveInStockProducts
+                //var expensiveInStockProducts = from p in products
+                //                               where p.UnitsInStock > 0 && p.UnitPrice > 3
+                //                               select new { p.ProductName };
+                
+                //student 3
+                // Link3 TODO
+                var expensiveInStockProducts =
+                from prod in products
+                where (prod.UnitsInStock > 0 && prod.UnitPrice > 3.0000M)
+                select prod;
 
                 Console.WriteLine("In-stock products that cost more than 3.00:");
                 foreach (var product in expensiveInStockProducts)
@@ -126,16 +148,28 @@ namespace RestrictionOperators
             {
                 List<Customer> customers = GetCustomerList();
 
-                //Create code to implement the functionality listed in the [Description] tag for this query
+                //Query Linq4
+                //var waCustomers =
+                //    from cust in customers                    
+                //    where cust.Region == "WA"
+                //    select cust;
+
+                //student 1
+                //Linq code for waCustomers
+                //var waCustomers = from c in customers
+                //                  where c.Region == "WA"
+                //                  select new { c.CustomerID, c.CompanyName, c.Orders, c.Region };
+
+                //student 3
                 var waCustomers =
-                    from cust in customers                    
-                    where cust.Region == "WA"
-                    select cust;
+                    from customer in customers
+                    where customer.Region == "WA"
+                    select customer;
 
                 Console.WriteLine("Customers from Washington and their orders:");
                 foreach (var customer in waCustomers)
                 {
-                    Console.WriteLine("Customer {0}: {1}", customer.CustomerID, customer.CompanyName);
+                    Console.WriteLine("Customer {0}: {1} from {2}", customer.CustomerID, customer.CompanyName, customer.Region);
                     foreach (var order in customer.Orders)
                     {
                         Console.WriteLine("  Order {0}: {1}", order.OrderID, order.OrderDate);

@@ -20,3 +20,9 @@ D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOpe
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\Customers.xml
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\OrderingOperators.exe
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\OrderingOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\obj\x86\Debug\OrderingOperators.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\obj\x86\Debug\OrderingOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\Customers.xml
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\OrderingOperators.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\bin\Debug\OrderingOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\OrderingOperators\obj\x86\Debug\OrderingOperators.csprojResolveAssemblyReference.cache

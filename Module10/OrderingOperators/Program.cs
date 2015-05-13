@@ -19,13 +19,13 @@ namespace OrderingOperators
 
             //samples.Linq29(); // This sample uses orderby to sort a list of words by length
 
-            //samples.Linq30(); // This sample uses orderby to sort a list of products by name. Use the \"descending\" 
+            samples.Linq30(); // This sample uses orderby to sort a list of products by name. Use the \"descending\" 
                                 // keyword at the end of the clause to perform a reverse ordering
 
             //samples.Linq31(); // This sample uses an  OrderBy clause with a custom comparer to do a case-insensitive 
                                 // sort of the words in an array
 
-            samples.Linq32(); // This sample uses  orderby and  descending to sort a list of doubles from highest to 
+            //samples.Linq32(); // This sample uses  orderby and  descending to sort a list of doubles from highest to 
                                 // lowest
 
             //samples.Linq33(); // This sample uses  orderby to sort a list of products by units in stock from highest 
@@ -109,11 +109,17 @@ namespace OrderingOperators
             {
                 List<Product> products = GetProductList();
 
-                //Enter code here to order products by name
-                var sortedProducts = 
-                    from prod in products
-                    orderby prod.ProductName
-                    select prod; 
+                //Enter code here to order products by name\
+                //Query Linq30
+                //var sortedProducts = 
+                //    from prod in products
+                //    orderby prod.ProductName
+                //    select prod;
+
+                var sortedProducts =
+                from prod in products
+                orderby prod.ProductName
+                select prod;
 
                 // You don't need to write code to output these values as this next line of code does it for you
 
@@ -148,11 +154,12 @@ namespace OrderingOperators
             {
                 double[] doubles = { 1.7, 2.3, 1.9, 4.1, 2.9 };
 
-                //Enter code here to order this list in descending order
+                //Query Linq32
                 var sortedDoubles =
                     from d in doubles
                     orderby d descending
                     select d;
+
                 Console.WriteLine("The doubles from highest to lowest:");
                 foreach (var d in sortedDoubles)
                 {

@@ -24,3 +24,9 @@ D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\Restriction
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\Customers.xml
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\RestrictionOperators.exe
 D:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\RestrictionOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\obj\x86\Debug\RestrictionOperators.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\obj\x86\Debug\RestrictionOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\Customers.xml
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\RestrictionOperators.exe
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\bin\Debug\RestrictionOperators.pdb
+C:\Users\bret\Documents\GitHub\Dev204xProgrammingWithCSharp\Module10\RestrictionOperators\obj\x86\Debug\RestrictionOperators.csprojResolveAssemblyReference.cache
