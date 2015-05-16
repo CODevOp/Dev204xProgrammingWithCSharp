@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 
 namespace Mod12_Homework
 {
@@ -24,12 +25,39 @@ namespace Mod12_Homework
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void btnWriteFile_Click(object sender, RoutedEventArgs e)
         {
-           WriteFileAsync();
+            ///////////////// OPTION 1 /////////////////////////////////
+            //accordint to classmate this should be changed to a sync method but that is not possible.
+            //events do not return data to their callers.
+            // DOES NOT WORK: await WriteFileAsync();
+
+            ///////////////// OPTION 2 /////////////////////////////////
+            // modify this to use a task. To that the text field must be sent to metod
+            // WORKS: 
+            string text = txtContents.Text;
+            Task writeFileTask = new Task<Task>(() => WriteFileAsync(text));
+            writeFileTask.Start();
+
+            ///////////////// OPTION 3 /////////////////////////////////
+            // modify this to use a task. To that the text field must be sent to metod
+            // DOES not work WORKS: needs to be new Task<t> 
+            //string text = txtContents.Text;
+            //Task writeFileTask = new Task(() => WriteFileAsync(text));
+            //writeFileTask.Start();
+
+            ///////////////// OPTION 4 /////////////////////////////////
+            // modify this to use a task. To that the text field must be sent to metod
+            // This simply runs a new task.
+            // WORKS: 
+            //string text = txtContents.Text;
+            //Task.Run(() => WriteFileAsync(text));           
+
+
+            
         }
 
         private void btnReadFile_Click(object sender, RoutedEventArgs e)
@@ -37,10 +65,9 @@ namespace Mod12_Homework
             ReadFileAsync();
         }
 
-        async public void WriteFileAsync()
+        async public Task WriteFileAsync(string text )
         {
-            string filePath = @"SampleFile.txt";
-            string text = txtContents.Text;
+            string filePath = @"SampleFile.txt";           
 
             await WriteTextAsync(filePath, text);
         }
@@ -58,6 +85,9 @@ namespace Mod12_Homework
                 //changed from Write to WriteAync
                 await sourceStream.WriteAsync (encodedText, 0, encodedText.Length);
             };
+
+            Thread.Sleep(5000);
+            Console.Beep(2000, 500);
         }
 
         async public void ReadFileAsync()
@@ -101,5 +131,11 @@ namespace Mod12_Homework
                 return sb.ToString();
             }
         }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("The write button is full asynchronous. The read button will still lock up if the task run is too long.");
+        }
+
     }
 }
